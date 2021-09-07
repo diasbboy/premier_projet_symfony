@@ -2,36 +2,39 @@
 
 namespace App\Form;
 
-use App\Entity\Article;
+use App\Entity\Journal;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class ArticleType extends AbstractType
+class JournalType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-
-            ->add('titre',TextType::class,[
-                'label'=>'titre de l\'article',
-                'attr' => [
-                'placeholder'=> 'Tapez le titre ici ..'
+            ->add('nom',TextType::class,[
+                'label'=>'titre du journal',
+                'attr'=>[
+                    'placeholder'=>'Entrez votre titre'
                 ]
             ])
 
-            ->add('contenu',TextareaType::class,[
-                'label' => 'Contenu de l\'article'
+            ->add('prix',NumberType::class,[
+                'label'=>'Le prix',
+                'attr'=>[
+                    'placeholder'=>'Entrez le prix'
+                ]
             ])
         ;
     }
 
+
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Article::class
+            'data_class' => Journal::class
         ]);
     }
 }

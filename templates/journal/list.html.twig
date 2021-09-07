@@ -1,0 +1,31 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+    Listes des journaux
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center">Les journaux</h1>
+        </div>
+
+        {% for journal in journaux %}
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 mt-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>{{ journal.nom }}</h4>
+                    </div>
+
+                    <div class="card-body">
+                        {{ journal.prix }} centimes
+                    </div>
+                </div>
+            </div>          
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

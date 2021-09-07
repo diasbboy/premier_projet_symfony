@@ -3,31 +3,8 @@
 {% block title %}Hello HomeController!{% endblock %}
 
 {% block body %}
-
-    <h1>
-        Hello {{ prenom }}
-    </h1>
-    <h2>
-    Mon age : {{ age }} ans.
-    </h2>
-    <h1>
-    artiste : {{ jul }}
-    </h1>
-
-    {% if age >= 18 %}
-        <p>Je suis majeur</p>
-    {% else %}
-            <p>Je suis mineur</p>
-    {% endif %}
-
-    {% for item in pokemons %}
-        {# le | upper c'est pour mettre en majuscule #}
-        <p>je suis le pokemon: {{ item | upper }}</p>
-    {% endfor %}
-
-    <h2>
-        Je suis Nartuo du village {{ ninjas.village }}
-        mon renard est {{ ninjas.renard }}
-    </h2>
+    <div class="container pt-5">
+        <h1>Page d'accueil</h1>  
+    </div>
 
 {% endblock %}

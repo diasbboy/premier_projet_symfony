@@ -1,27 +1,27 @@
 {% extends "base.html.twig" %}
 
 {% block title %}
-    Création d'Article
+    Ajout d'un journal
 {% endblock %}
- 
+
 {% block body %}
 
-    <div class="container pt-5">
+    <div class="container">
         <div class="row">
             {% include "shared/_messages_flash.html.twig" %}
             <div class="card col-12">
                 <div class="card-header">
-                    <h2>Création d'article</h2>
+                    <h2>Ajout d'un journal</h2>
                 </div>
 
                 <div class="card-body">
-                    {{ form_start(formArticle) }}
+                    {{ form_start(formJournal) }}
 
-                    {{  form_widget(formArticle) }}
+                    {{ form_widget(formJournal) }}
 
-                    <button type="submit" class="btn btn-primary mt-3">Enregistrer</button>
+                    <button type="submit" class="btn btn-primary mt-3">Ajouter</button>
 
-                    {{ form_end(formArticle) }}
+                    {{ form_end(formJournal) }}
                 </div>
             </div>
         </div>
