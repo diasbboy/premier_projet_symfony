@@ -4,7 +4,7 @@ namespace App\Form;
 
 use App\Entity\Journal;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\NumberType;
+use Symfony\Component\Form\Extension\Core\Type\MoneyType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -15,16 +15,18 @@ class JournalType extends AbstractType
     {
         $builder
             ->add('nom',TextType::class,[
-                'label'=>'titre du journal',
+                'label'=>'Nom du journal',
                 'attr'=>[
-                    'placeholder'=>'Entrez votre titre'
+                    'placeholder'=>'Entrez le nom du journal'
                 ]
             ])
 
-            ->add('prix',NumberType::class,[
+            ->add('prix',MoneyType::class,[
+                'currency' => 'EUR',
+                'divisor' => 100,
                 'label'=>'Le prix',
                 'attr'=>[
-                    'placeholder'=>'Entrez le prix'
+                    'placeholder'=>'Entrez le prix en euro..'
                 ]
             ])
         ;

@@ -19,5 +19,5 @@ class ListJournauxController extends AbstractController
             'journaux' => $journaux
         ]);
     }
-
+    
 }

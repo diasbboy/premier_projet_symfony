@@ -12,6 +12,8 @@
                 <h1 class="text-center">Mes articles</h1>
             </div>
 
+            {% include "shared/_messages_flash.html.twig" %}
+
             {% for article in articles %}
                 <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 mt-3">
                     <div class="card">
@@ -22,11 +24,14 @@
                             {{ article.contenu }}
                         </div>
                         <div class="card-footer">
-                            paru le {{ article.createdAt | date('d-m-y') }}
+                            <p>paru le : {{ article.createdAt | date('d-m-y') }}</p>     
+                            <a class="btn btn-primary mt-2" href="{{ path('detail_article',{'id':article.id}) }}">voir détail</a>                 
                         </div>
+
                     </div>
                 </div>
             {% endfor %}
         </div>
     </div>
+    
 {% endblock %}

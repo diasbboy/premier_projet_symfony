@@ -13,7 +13,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class CreateArticleController extends AbstractController 
 {
     /**
-     * @Route("/article/creer", name="creer_article")
+     * @Route("/admin/article/creer", name="creer_article")
      */
     public function create(Request $request, EntityManagerInterface $em) :Response
     {
@@ -25,6 +25,10 @@ class CreateArticleController extends AbstractController
 
         if($form->isSubmitted() && $form->isValid())
         {
+            $auteur = $this->getUser();
+
+            $article->setAuteur($auteur);
+
             $em->persist($article);
             $em->flush();
 

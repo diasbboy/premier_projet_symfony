@@ -13,7 +13,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class AjouterJournalController extends AbstractController
 {
     /**
-     * @Route("/journal/ajouter", name="ajouter_journal")
+     * @Route("/admin/journal/ajouter", name="ajouter_journal")
      */
     public function ajouter(Request $request, EntityManagerInterface $em): Response
     {
